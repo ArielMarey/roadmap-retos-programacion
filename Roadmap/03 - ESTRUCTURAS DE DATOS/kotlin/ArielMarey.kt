@@ -3,17 +3,6 @@
  * - Muestra ejemplos de creación de todas las estructuras soportadas por defecto
  *   en tu lenguaje.
  * - Utiliza operaciones de inserción, borrado, actualización y ordenación.
- *
- * DIFICULTAD EXTRA (opcional):
- * Crea una agenda de contactos por terminal.
- * - Debes implementar funcionalidades de búsqueda, inserción, actualización
- *   y eliminación de contactos.
- * - Cada contacto debe tener un nombre y un número de teléfono.
- * - El programa solicita en primer lugar cuál es la operación que se quiere realizar,
- *   y a continuación los datos necesarios para llevarla a cabo.
- * - El programa no puede dejar introducir números de teléfono no numéricos y con más
- *   de 11 dígitos (o el número de dígitos que quieras).
- * - También se debe proponer una operación de finalización del programa.
  */
 
 // En Kotlin hay 3 tipos de estructuras: List, Set, y Map
@@ -103,6 +92,34 @@ fun srchMap(item: String): Boolean {
     return (item in precios)
 }
 
+/* DIFICULTAD EXTRA (opcional):
+ * Crea una agenda de contactos por terminal.
+ * - Debes implementar funcionalidades de búsqueda, inserción, actualización
+ *   y eliminación de contactos.
+ * - Cada contacto debe tener un nombre y un número de teléfono.
+ * - El programa solicita en primer lugar cuál es la operación que se quiere realizar,
+ *   y a continuación los datos necesarios para llevarla a cabo.
+ * - El programa no puede dejar introducir números de teléfono no numéricos y con más
+ *   de 11 dígitos (o el número de dígitos que quieras).
+ * - También se debe proponer una operación de finalización del programa.
+ */
+ 
+ // en kotlin se utiliza la funcion "readln()" para leer inputs de usuarios
+ 
+var agendaCont: MutableMap<String, Int> = mutableMapOf()
+
+fun agendaMenu(): String {
+    println("Bienvenido a tu agenda personal Kotlin. Por favor ingresa el número de la opción que deseas ejecutar")
+    println("1. Buscar contacto")
+    println("2. Agregar nuevo contacto")
+    println("3. Modificar contacto existente")
+    println("4. Eliminar contacto")
+    println("5. Cerrar la agenda")
+	val userInput = readln()
+    
+    return userInput
+}
+
 fun main() {
-    println(srchMap("Cocada"))    
+    agendaMenu()
 }
